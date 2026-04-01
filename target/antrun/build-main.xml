@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project name="maven-antrun-" default="main">
+  <target name="main">
+    <delete failonerror="false" dir="c:/Tomcat10/apache-tomcat-10.1.52/webapps/bookstore" />
+    <copy file="C:\СопрПрогСистем\курсач\target/bookstore.war" todir="c:/Tomcat10/apache-tomcat-10.1.52/webapps" overwrite="true" />
+    <unzip src="c:/Tomcat10/apache-tomcat-10.1.52/webapps/bookstore.war" dest="c:/Tomcat10/apache-tomcat-10.1.52/webapps/bookstore" />
+  </target>
+</project>
