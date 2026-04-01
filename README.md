@@ -114,6 +114,54 @@ http://localhost:8080/bookstore/
 - Имя пользователя: `admin`
 - Пароль: `admin123`
 
+## Схема базы данных
+
+```mermaid
+erDiagram
+    BOOKS ||--o{ ORDERS : "id_book"
+    SALES ||--o{ ORDERS : "id_sale"
+    CUSTOMERS ||--o{ ORDERS : "id_customer"
+
+    BOOKS {
+        serial id PK
+        varchar200 author
+        varchar300 title
+        varchar200 publishing
+        varchar200 seriya
+        integer year
+        numeric10_2 price
+    }
+
+    SALES {
+        serial id PK
+        varchar100 firstname
+        varchar100 lastname
+        varchar100 position
+        date employment_date
+        date date_birth
+        varchar150 email UK
+    }
+
+    CUSTOMERS {
+        serial id PK
+        varchar100 firstname
+        varchar100 lastname
+        varchar150 email UK
+        varchar20 phone
+    }
+
+    ORDERS {
+        serial id PK
+        integer id_book FK
+        integer id_customer FK
+        integer id_sale FK
+        date date_input
+        date date_output
+        integer quantity
+        numeric10_2 total_sum
+    }
+```
+
 ## Модель данных
 
 ### Book — Книга
